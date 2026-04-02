@@ -18,15 +18,24 @@ This project compares a stronger teacher model against a smaller student model o
 
 ## Results
 
-| Model | Role | Training Method | Accuracy (%) |
-| --- | --- | --- | ---: |
-| ResNet-18 | Teacher | Supervised training | 94.58 |
-| ResNet-9 | Student | Supervised training | 88.09 |
-| ResNet-9 | KD Student | Knowledge Distillation | 92.51 |
+<table>
+  <tr>
+    <td valign="top">
 
-<p align="center">
-  <img src="figures/final_accuracy_comparison.png" alt="Final Accuracy Comparison" width="320">
-</p>
+| Model | Role | Method | Acc (%) |
+| --- | --- | --- | ---: |
+| ResNet-18 | Teacher | Supervised | 94.58 |
+| ResNet-9 | Student | Supervised | 88.09 |
+| ResNet-9 | KD Student | KD | 92.51 |
+
+  </td>
+    <td valign="top" align="center">
+      <img src="figures/final_accuracy_comparison.png" alt="Final Accuracy Comparison" width="580">
+      <br>
+      <sub>Comparison of teacher, student, and KD student accuracy on CIFAR-10.</sub>
+    </td>
+  </tr>
+</table>
 
 ## How To Run
 
