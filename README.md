@@ -24,6 +24,10 @@ This project compares a stronger teacher model against a smaller student model o
 | ResNet-9 | Student | Supervised training | 88.09 |
 | ResNet-9 | KD Student | Knowledge Distillation | 92.51 |
 
+### Final Accuracy Comparison
+
+![Final Accuracy Comparison](figures/final_accuracy_comparison.png)
+
 ## How To Run
 
 Install dependencies:
