@@ -44,42 +44,42 @@ def plot_final_accuracy_comparison(accuracy_dict, save_path):
     labels = list(accuracy_dict.keys())
     values = list(accuracy_dict.values())
 
-    plt.figure(figsize=(2, 0.5))
+    plt.figure(figsize=(3.2, 2.0))
     colors = ["#0C355C", "#62261D", "#333913"]
     bars = plt.bar(
         labels,
         values,
         color=colors,
-        width=0.22,
+        width=0.24,
         edgecolor="#1A1A1A",
-        linewidth=0.8,
+        linewidth=0.6,
     )
-    plt.title("Final Accuracy Comparison", fontsize=14, fontweight="bold")
-    plt.ylabel("Accuracy (%)", fontsize=11)
+    plt.title("Final Accuracy Comparison", fontsize=8, fontweight="bold", pad=6)
+    plt.ylabel("Accuracy (%)", fontsize=7)
     plt.ylim(80, 100)
-    plt.grid(axis="y", linestyle="--", alpha=0.3)
+    plt.grid(axis="y", linestyle="--", alpha=0.25, linewidth=0.5)
     plt.gca().set_axisbelow(True)
     plt.gca().spines["top"].set_visible(False)
     plt.gca().spines["right"].set_visible(False)
     plt.gca().spines["left"].set_color("#444444")
     plt.gca().spines["bottom"].set_color("#444444")
-    plt.xticks(fontsize=10)
-    plt.yticks(fontsize=10)
+    plt.xticks(fontsize=6)
+    plt.yticks(fontsize=6)
 
     for bar, value in zip(bars, values):
         plt.text(
             bar.get_x() + bar.get_width() / 2,
-            value + 0.35,
+            value + 0.18,
             f"{value:.2f}",
             ha="center",
             va="bottom",
-            fontsize=10,
+            fontsize=6,
             fontweight="semibold",
             color="#1A1A1A",
         )
 
     plt.tight_layout()
-    plt.savefig(save_path, dpi=200)
+    plt.savefig(save_path, dpi=200, bbox_inches="tight")
     plt.close()
 
 
