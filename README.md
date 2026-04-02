@@ -18,6 +18,7 @@ This project compares a stronger teacher model against a smaller student model o
 
 ## Results
 
+<div align="center">
 <table>
   <tr>
     <td valign="top">
@@ -36,6 +37,11 @@ This project compares a stronger teacher model against a smaller student model o
     </td>
   </tr>
 </table>
+</div>
+
+<p align="center">
+  Trained ResNet-18 and ResNet-9 using supervised learning, then distilled knowledge from the ResNet-18 teacher into the ResNet-9 student using KD.
+</p>
 
 ## How To Run
 
