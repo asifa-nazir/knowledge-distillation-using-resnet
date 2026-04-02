@@ -48,7 +48,6 @@ This project compares a stronger teacher model against a smaller student model o
           <td>92.51</td>
         </tr>
       </table>
-      <br>
       <sub>
         Trained ResNet-18 and ResNet-9 using supervised learning,<br>
         then distilled knowledge from the ResNet-18 teacher<br>
