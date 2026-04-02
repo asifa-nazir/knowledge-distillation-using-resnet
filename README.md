@@ -22,14 +22,38 @@ This project compares a stronger teacher model against a smaller student model o
 <table>
   <tr>
     <td valign="top">
-
-| Model | Role | Method | Acc (%) |
-| --- | --- | --- | ---: |
-| ResNet-18 | Teacher | Supervised | 94.58 |
-| ResNet-9 | Student | Supervised | 88.09 |
-| ResNet-9 | KD Student | KD | 92.51 |
-
-<sub>Trained ResNet-18 and ResNet-9 using supervised learning, then distilled knowledge from the ResNet-18 teacher into the ResNet-9 student using KD.</sub>
+      <table>
+        <tr>
+          <th>Model</th>
+          <th>Role</th>
+          <th>Method</th>
+          <th>Acc (%)</th>
+        </tr>
+        <tr>
+          <td>ResNet-18</td>
+          <td>Teacher</td>
+          <td>Supervised</td>
+          <td>94.58</td>
+        </tr>
+        <tr>
+          <td>ResNet-9</td>
+          <td>Student</td>
+          <td>Supervised</td>
+          <td>88.09</td>
+        </tr>
+        <tr>
+          <td>ResNet-9</td>
+          <td>KD Student</td>
+          <td>KD</td>
+          <td>92.51</td>
+        </tr>
+      </table>
+      <br>
+      <sub>
+        Trained ResNet-18 and ResNet-9 using supervised learning,<br>
+        then distilled knowledge from the ResNet-18 teacher<br>
+        into the ResNet-9 student using KD.
+      </sub>
 
   </td>
     <td valign="top" align="center">
