@@ -99,3 +99,7 @@ python train_KD.py
 - Resume checkpoints are ignored by git and are not pushed to GitHub.
 - The teacher weights should be saved as `teacher.pth` before running `train_KD.py`.
 - The distilled student weights are saved as `kd_student.pth`.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
