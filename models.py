@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import torchvision.models as models
+import torchvision.models as tv_models
 
 
 class ResidualBlock(nn.Module):
@@ -69,26 +69,9 @@ class ResNet9(nn.Module):
         x = self.classifier(x)
         return x
 
-
-def get_resnet50_cifar(num_classes=10):
-    """Teacher Model: ResNet-50 adapted for 32x32 CIFAR-10 images."""
-    # Load model without pre-trained weights
-    model = models.resnet50(weights=None)
-    
-    # 1. Replace the first 7x7 conv layer with a 3x3 conv layer
-    model.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1, bias=False)
-    
-    # 2. Remove the maxpool layer (replace with Identity) because CIFAR is already small
-    model.maxpool = nn.Identity()
-    
-    # 3. Change the final fully connected layer to output 10 classes (CIFAR-10)
-    model.fc = nn.Linear(model.fc.in_features, num_classes)
-    
-    return model
-
 def get_resnet18_cifar(num_classes=10):
-    """Student Model: ResNet-18 adapted for 32x32 CIFAR-10 images."""
-    model = models.resnet18(weights=None)
+    """Teacher model: ResNet-18 adapted for 32x32 CIFAR-10 images."""
+    model = tv_models.resnet18(weights=None)
     
     model.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1, bias=False)
     model.maxpool = nn.Identity()
@@ -143,15 +126,11 @@ def get_resnet9_cifar(num_classes=10):
 
 # Quick test to make sure it works
 if __name__ == "__main__":
-    teacher = get_resnet50_cifar()
-    student = get_resnet18_cifar()
-    small_student = get_small_cnn_cifar()
-    resnet9 = get_resnet9_cifar()
+    teacher = get_resnet18_cifar()
+    student = get_resnet9_cifar()
     
     # Create a dummy CIFAR-10 image batch (Batch Size of 2, 3 Channels, 32x32 Pixels)
     dummy_input = torch.randn(2, 3, 32, 32)
     
     print("Teacher output shape:", teacher(dummy_input).shape) # Should be[2, 10]
     print("Student output shape:", student(dummy_input).shape) # Should be [2, 10]
-    print("Small student output shape:", small_student(dummy_input).shape) # Should be [2, 10]
-    print("ResNet-9 output shape:", resnet9(dummy_input).shape) # Should be [2, 10]

@@ -15,8 +15,6 @@ This project compares a stronger teacher model against a smaller student model o
 - `train_teacher.py`: train the teacher model
 - `train_student.py`: train the student baseline
 - `train_KD.py`: train the distilled student
-- `teacher.pth`: saved teacher weights
-- `student.pth`: saved student baseline weights
 
 ## Results
 
@@ -54,13 +52,10 @@ python train_KD.py
 
 ## Saved Weights
 
-- `teacher.pth`: trained ResNet-18 teacher weights
-- `student.pth`: trained ResNet-9 student baseline weights
 - `kd_student.pth`: distilled ResNet-9 weights created after running `train_KD.py`
 
 ## Notes
 
 - Resume checkpoints are ignored by git and are not pushed to GitHub.
 - The teacher weights should be saved as `teacher.pth` before running `train_KD.py`.
-- The repository currently includes `teacher.pth` and `student.pth`.
 - The distilled student weights are saved as `kd_student.pth`.

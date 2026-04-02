@@ -1,8 +1,6 @@
 venv/
 __pycache__/
 *.pth
-!teacher.pth
-!student.pth
 data/
 pip_cache/
 *.tmp
