@@ -44,7 +44,7 @@ def plot_final_accuracy_comparison(accuracy_dict, save_path):
     labels = list(accuracy_dict.keys())
     values = list(accuracy_dict.values())
 
-    plt.figure(figsize=(4, 2.5))
+    plt.figure(figsize=(2, 0.5))
     colors = ["#0C355C", "#62261D", "#333913"]
     bars = plt.bar(
         labels,
