@@ -29,6 +29,8 @@ This project compares a stronger teacher model against a smaller student model o
 | ResNet-9 | Student | Supervised | 88.09 |
 | ResNet-9 | KD Student | KD | 92.51 |
 
+<sub>Trained ResNet-18 and ResNet-9 using supervised learning, then distilled knowledge from the ResNet-18 teacher into the ResNet-9 student using KD.</sub>
+
   </td>
     <td valign="top" align="center">
       <img src="figures/final_accuracy_comparison.png" alt="Final Accuracy Comparison" width="580">
@@ -38,10 +40,6 @@ This project compares a stronger teacher model against a smaller student model o
   </tr>
 </table>
 </div>
-
-<p align="center">
-  Trained ResNet-18 and ResNet-9 using supervised learning, then distilled knowledge from the ResNet-18 teacher into the ResNet-9 student using KD.
-</p>
 
 ## How To Run
 
